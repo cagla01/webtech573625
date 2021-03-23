@@ -1,6 +1,6 @@
-const Member = require("../model/members.model.js");
+const Buch = require("../model/buchliste.model.js");
 
-// Create and Save a new Member
+// Create and Save a new Buch
 exports.create = (req, res) => {
     // Validate request
     if (!req.body) {
@@ -9,54 +9,57 @@ exports.create = (req, res) => {
         });
     }
 
-    // Create a Member
-    const member = new Member({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email
+    // Create a Buch
+    const buch = new Buch({
+        titel: req.body.titel,
+        autor: req.body.autor,
+        genre: req.body.genre,
+        status: req.body.status,
+        bewertung: req.body.bewertung,
+        notiz: req.body.notiz
     });
 
     // Save Customer in the database
-    Member.create(member, (err, data) => {
+    Buch.create(buch, (err, data) => {
         if (err)
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Member."
+                    err.message || "Some error occurred while creating the Buch."
             });
         else res.send(data);
     });
 };
 
-// Retrieve all Members from the database.
+// Retrieve all Buchliste from the database.
 exports.findAll = (req, res) => {
-    Member.getAll((err, data) => {
+    Buch.getAll((err, data) => {
         if (err)
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving members."
+                    err.message || "Some error occurred while retrieving buchliste."
             });
         else res.send(data);
     });
 };
 
-// Find a single Member with a memberId
+// Find a single Buch with a buchId
 exports.findOne = (req, res) => {
-    Member.findById(req.params.memberId, (err, data) => {
+    Buch.findById(req.params.buchId, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Member with id ${req.params.memberId}.`
+                    message: `Not found Buch with id ${req.params.buchId}.`
                 });
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Member with id " + req.params.memberId
+                    message: "Error retrieving Buch with id " + req.params.buchId
                 });
             }
         } else res.send(data);
     });
 };
 
-// Update a Member identified by the memberId in the request
+// Update a Buch identified by the buchId in the request
 exports.update = (req, res) => {
     // Validate Request
     if (!req.body) {
@@ -65,18 +68,18 @@ exports.update = (req, res) => {
         });
     }
 
-    Member.updateById(
-        req.params.memberId,
-        new Member(req.body),
+    Buch.updateById(
+        req.params.buchId,
+        new Buch(req.body),
         (err, data) => {
             if (err) {
                 if (err.kind === "not_found") {
                     res.status(404).send({
-                        message: `Not found Member with id ${req.params.memberId}.`
+                        message: `Not found Buch with id ${req.params.buchId}.`
                     });
                 } else {
                     res.status(500).send({
-                        message: "Error updating Member with id " + req.params.memberId
+                        message: "Error updating Buch with id " + req.params.buchId
                     });
                 }
             } else res.send(data);
@@ -84,31 +87,31 @@ exports.update = (req, res) => {
     );
 };
 
-// Delete a Member with the specified memberId in the request
+// Delete a Buch with the specified buchId in the request
 exports.delete = (req, res) => {
-    Member.remove(req.params.memberId, (err, data) => {
+    Buch.remove(req.params.buchId, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Member with id ${req.params.memberId}.`
+                    message: `Not found Buch with id ${req.params.buchId}.`
                 });
             } else {
                 res.status(500).send({
-                    message: "Could not delete Member with id " + req.params.memberId
+                    message: "Could not delete Buch with id " + req.params.buchId
                 });
             }
-        } else res.send({ message: `Member was deleted successfully!` });
+        } else res.send({ message: `Buch was deleted successfully!` });
     });
 };
 
-// Delete all Members from the database.
+// Delete all Buchliste from the database.
 exports.deleteAll = (req, res) => {
-    Member.removeAll((err, data) => {
+    Buch.removeAll((err, data) => {
         if (err)
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while removing all members."
+                    err.message || "Some error occurred while removing all buchliste."
             });
-        else res.send({ message: `All Members were deleted successfully!` });
+        else res.send({ message: `All Buchliste were deleted successfully!` });
     });
 };

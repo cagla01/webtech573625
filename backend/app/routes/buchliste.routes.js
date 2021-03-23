@@ -1,21 +1,21 @@
 module.exports = app => {
-    const members = require("../controller/members.controller.js");
+    const buchliste = require("../controller/buchliste.controller.js");
 
-    // Create a new Member
-    app.post("/members", members.create);
+    // Create a new Buch
+    app.post("/buchliste", buchliste.create);
 
-    // GET all Members
-    app.get("/members", members.findAll);
+    // GET all Buchliste
+    app.get("/buchliste", buchliste.findAll);
 
-    // GET one single Member with memberId
-    app.get("/members/:memberId", members.findOne);
+    // GET one single Buch with BuchId
+    app.get("/buchliste/:buchId", buchliste.findOne);
 
-    // Update one Member with memberId
-    app.put("/members/:memberId", members.update);
+    // Update one Buch with BuchId
+    app.put("/buchliste/:buchId", buchliste.update);
 
-    // Delete the Member with memberId
-    app.delete("/members/:memberId", members.delete);
+    // Delete the Buch with BuchId
+    app.delete("/buchliste/:buchId", buchliste.delete);
 
-    // Delete all members
-    app.delete("/members", members.deleteAll);
+    // Delete all buchliste
+    app.delete("/buchliste", buchliste.deleteAll);
 };

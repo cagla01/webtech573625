@@ -1,27 +1,30 @@
 const sql = require("./db.js");
 
 // constructor
-const Member = function(member) {
-    this.firstname = member.firstname;
-    this.lastname = member.lastname;
-    this.email = member.email;
+const Buch = function(buch) {
+    this.titel = buch.titel;
+    this.autor = buch.autor;
+    this.genre = buch.genre;
+    this.status = buch.status;
+    this.bewertung = buch.bewertung;
+    this.notiz = buch.notiz;
 };
 
-Member.create = (newMember, result) => {
-    sql.query("INSERT INTO members SET ?", newMember, (err, res) => {
+Buch.create = (newBuch, result) => {
+    sql.query("INSERT INTO buchliste SET ?", newBuch, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
             return;
         }
 
-        console.log("created member: ", { id: res.insertId, ...newMember });
-        result(null, { id: res.insertId, ...newMember });
+        console.log("created buch: ", { id: res.insertId, ...newBuch });
+        result(null, { id: res.insertId, ...newBuch });
     });
 };
 
-Member.findById = (memberId, result) => {
-    sql.query(`SELECT * FROM members WHERE id = ${memberId}`, (err, res) => {
+Buch.findById = (buchId, result) => {
+    sql.query(`SELECT * FROM buchliste WHERE id = ${buchId}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -29,33 +32,33 @@ Member.findById = (memberId, result) => {
         }
 
         if (res.length) {
-            console.log("found member: ", res[0]);
+            console.log("found buch: ", res[0]);
             result(null, res[0]);
             return;
         }
 
-        // not found Member with the id
+        // not found Buch with the id
         result({ kind: "not_found" }, null);
     });
 };
 
-Member.getAll = result => {
-    sql.query("SELECT * FROM members", (err, res) => {
+Buch.getAll = result => {
+    sql.query("SELECT * FROM buchliste", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
             return;
         }
 
-        console.log("members: ", res);
+        console.log("buchliste: ", res);
         result(null, res);
     });
 };
 
-Member.updateById = (id, member, result) => {
+Buch.updateById = (id, buch, result) => {
     sql.query(
-        "UPDATE members SET firstname = ?, lastname = ?, email = ? WHERE id = ?",
-        [member.firstname, member.lastname, member.email, id],
+        "UPDATE buchliste SET titel = ?, autor = ?, genre = ?, status = ?, bewertung = ?, notiz = ? WHERE id = ?",
+        [buch.titel, buch.autor, buch.genre, buch.status, buch.bewertung, buch.notiz, id],
         (err, res) => {
             if (err) {
                 console.log("error: ", err);
@@ -69,14 +72,14 @@ Member.updateById = (id, member, result) => {
                 return;
             }
 
-            console.log("updated member: ", { id: id, ...member });
-            result(null, { id: id, ...member });
+            console.log("updated buch: ", { id: id, ...buch });
+            result(null, { id: id, ...buch });
         }
     );
 };
 
-Member.remove = (id, result) => {
-    sql.query("DELETE FROM members WHERE id = ?", id, (err, res) => {
+Buch.remove = (id, result) => {
+    sql.query("DELETE FROM buchliste WHERE id = ?", id, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -84,27 +87,27 @@ Member.remove = (id, result) => {
         }
 
         if (res.affectedRows == 0) {
-            // not found Member with the id
+            // not found Buch with the id
             result({ kind: "not_found" }, null);
             return;
         }
 
-        console.log("deleted member with id: ", id);
+        console.log("deleted buch with id: ", id);
         result(null, res);
     });
 };
 
-Member.removeAll = result => {
-    sql.query("DELETE FROM members", (err, res) => {
+Buch.removeAll = result => {
+    sql.query("DELETE FROM buchliste", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
             return;
         }
 
-        console.log(`deleted ${res.affectedRows} members`);
+        console.log(`deleted ${res.affectedRows} buchliste`);
         result(null, res);
     });
 };
 
-module.exports = Member;
+module.exports = Buch;
