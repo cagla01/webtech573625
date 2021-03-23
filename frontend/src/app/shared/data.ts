@@ -1,6 +1,9 @@
 export interface Data {
   id: number;
-  firstname: string;
-  lastname: string;
-  email: string;
+  titel: string;
+  autor: string;
+  genre: string;
+  status: string;
+  bewertung: string;
+  notiz: string;
 }

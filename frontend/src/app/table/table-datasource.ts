@@ -76,9 +76,12 @@ export class TableDataSource extends DataSource<Data> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'forename': return compare(a.firstname, b.firstname, isAsc);
-        case 'surname': return compare(a.lastname, b.lastname, isAsc);
-        case 'email': return compare(a.email, b.email, isAsc);
+        case 'titel': return compare(a.titel, b.titel, isAsc);
+        case 'autor': return compare(a.autor, b.autor, isAsc);
+        case 'genre': return compare(a.genre, b.genre, isAsc);
+        case 'status': return compare(a.status, b.status, isAsc);
+        case 'bewertung': return compare(a.bewertung, b.bewertung, isAsc);
+        case 'notiz': return compare(a.notiz, b.notiz, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

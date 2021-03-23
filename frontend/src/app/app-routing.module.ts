@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {TableComponent} from "./table/table.component";
 import {SingleComponent} from "./single/single.component";
-import {CreateComponent} from "./members/create/create.component";
-import {UpdateComponent} from "./members/update/update.component";
-import {ReadComponent} from "./members/read/read.component";
-import {DeleteComponent} from "./members/delete/delete.component";
+import {CreateComponent} from "./buchliste/create/create.component";
+import {UpdateComponent} from "./buchliste/update/update.component";
+import {ReadComponent} from "./buchliste/read/read.component";
+import {DeleteComponent} from "./buchliste/delete/delete.component";
 
 const routes: Routes = [
   { path: 'table', component: TableComponent },

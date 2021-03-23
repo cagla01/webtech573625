@@ -19,14 +19,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { SingleComponent } from './single/single.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
-import { CreateComponent } from './members/create/create.component';
-import { ReadComponent } from './members/read/read.component';
-import { UpdateComponent } from './members/update/update.component';
-import { DeleteComponent } from './members/delete/delete.component';
+import { CreateComponent } from './buchliste/create/create.component';
+import { ReadComponent } from './buchliste/read/read.component';
+import { UpdateComponent } from './buchliste/update/update.component';
+import { DeleteComponent } from './buchliste/delete/delete.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { allIcons } from 'ngx-bootstrap-icons';
-import { FormComponent } from './members/read/form/form.component';
+import { FormComponent } from './buchliste/read/form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 

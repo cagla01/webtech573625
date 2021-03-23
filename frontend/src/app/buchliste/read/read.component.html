@@ -4,20 +4,24 @@
       <thead>
       <tr>
         <th>Nr.</th>
-        <th>Vorname</th>
-        <th>Nachname</th>
-        <th>E-Mail</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>Titel</th>
+        <th>Autor</th>
+        <th>Genre</th>
+        <th>Status</th>
+        <th>Bewertung</th>
+        <th>Notiz</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let member of members; let i=index; trackBy: trackByData">
+      <tr *ngFor="let buch of buchliste; let i=index; trackBy: trackByData">
         <td>{{ i+1 }}</td>
-        <td>{{member.firstname}}</td>
-        <td>{{member.lastname}}</td>
-        <td>{{member.email}}</td>
-        <td><a [routerLink]="['/read/', member.id]">
+        <td>{{buch.titel}}</td>
+        <td>{{buch.autor}}</td>
+        <td>{{buch.genre}}</td>
+        <td>{{buch.status}}</td>
+        <td>{{buch.bewertung}}</td>
+        <td>{{buch.notiz}}</td>
+        <td><a [routerLink]="['/read/', buch.id]">
           <i-bs
             name="pencil-square"
             class="text-secondary"
@@ -29,7 +33,7 @@
           class="text-secondary"
           width="1em"
           height="1em"
-          (click)="open(content, member.id)">
+          (click)="open(content, buch.id)">
         </i-bs></td>
       </tr>
       </tbody>
@@ -41,8 +45,8 @@
     <p>{{ error?.message }}</p>
     <p>{{ error?.status }}</p>
   </div>
-  <div *ngIf="member">
-    <ck-form [data]="member" (updateEvent)="update($event)"></ck-form>
+  <div *ngIf="buch">
+    <ck-form [data]="buch" (updateEvent)="update($event)"></ck-form>
   </div>
 </div>
 
@@ -62,25 +66,43 @@
       <div class="form-group">
         <label for="inpId">id</label>
         <div class="input-group">
-          <input id="inpId" class="form-control" formControlName="idControl" value="{{ member?.id }}" readonly>
+          <input id="inpId" class="form-control" formControlName="idControl" value="{{ buch?.id }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpFN">firstname</label>
+        <label for="inpT">titel</label>
         <div class="input-group">
-          <input id="inpFN" class="form-control" formControlName="firstNameControl" value="{{ member?.firstname }}" readonly>
+          <input id="inpT" class="form-control" formControlName="titelControl" value="{{ buch?.titel }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpLN">lastname</label>
+        <label for="inpA">autor</label>
         <div class="input-group">
-          <input id="inpLN" class="form-control" formControlName="lastNameControl" value="{{ member?.lastname }}" readonly>
+          <input id="inpA" class="form-control" formControlName="autorControl" value="{{ buch?.autor }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpEmail">email</label>
+        <label for="inpG">genre</label>
         <div class="input-group">
-          <input id="inpEmail" class="form-control" formControlName="emailControl" value="{{ member?.email }}" readonly>
+          <input id="inpG" class="form-control" formControlName="genreControl" value="{{ buch?.genre }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpS">status</label>
+        <div class="input-group">
+          <input id="inpS" class="form-control" formControlName="statusControl" value="{{ buch?.status }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpB">bewertung</label>
+        <div class="input-group">
+          <input id="inpB" class="form-control" formControlName="bewertungControl" value="{{ buch?.bewertung }}" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inpN">notiz</label>
+        <div class="input-group">
+          <input id="inpN" class="form-control" formControlName="notizControl" value="{{ buch?.notiz }}" readonly>
         </div>
       </div>
     </form>

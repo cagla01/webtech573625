@@ -17,9 +17,12 @@ export class FormComponent implements OnInit {
     this.form = this.fb.group(
       {
         idControl: ['', Validators.required],
-        firstNameControl: ['', Validators.required],
-        lastNameControl: ['', Validators.required],
-        emailControl: ['', Validators.required],
+        titelControl: ['', Validators.required],
+        autorControl: ['', Validators.required],
+        genreControl: ['', Validators.required],
+        statusControl: ['', Validators.required],
+        bewertungControl: ['', Validators.required],
+        notizControl: ['', Validators.required],
       }
     );
   }
@@ -27,18 +30,24 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.form.patchValue({
       idControl: this.data?.id,
-      firstNameControl: this.data?.firstname,
-      lastNameControl: this.data?.lastname,
-      emailControl: this.data?.email
+      titelControl: this.data?.titel,
+      autorControl: this.data?.autor,
+      genreControl: this.data?.genre,
+      statusControl: this.data?.status,
+      bewertungControl: this.data?.bewertung,
+      notizControl: this.data?.notiz
     });
   }
 
   onSubmit(): void {
     const values = this.form.value;
     this.data.id = values.idControl;
-    this.data.firstname = values.firstNameControl;
-    this.data.lastname = values.lastNameControl;
-    this.data.email = values.emailControl;
+    this.data.titel = values.titelControl;
+    this.data.autor = values.autorControl;
+    this.data.genre = values.genreControl;
+    this.data.status = values.statusControl;
+    this.data.bewertung = values.bewertungControl;
+    this.data.notiz = values.notizControl;
     this.updateEvent.emit(this.data);
   }
 

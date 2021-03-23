@@ -12,8 +12,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./read.component.css']
 })
 export class ReadComponent implements OnInit {
-  members: Data[];
-  member: Data;
+  buchliste: Data[];
+  buch: Data;
   selectedId: number;
   error: HttpErrorResponse;
   closeResult = '';
@@ -32,9 +32,12 @@ export class ReadComponent implements OnInit {
     this.form = this.fb.group(
       {
         idControl: ['', Validators.required],
-        firstNameControl: ['', Validators.required],
-        lastNameControl: ['', Validators.required],
-        emailControl: ['', Validators.required],
+        titelControl: ['', Validators.required],
+        autorControl: ['', Validators.required],
+        genreControl: ['', Validators.required],
+        statusControl: ['', Validators.required],
+        bewertungControl: ['', Validators.required],
+        notizControl: ['', Validators.required],
       }
     );
   }
@@ -56,21 +59,21 @@ export class ReadComponent implements OnInit {
     this.cs.getAll().subscribe(
       (response: Data[]) => {
         console.log(response);
-        return this.members = response;  },
+        return this.buchliste = response;  },
       error => console.log(error)
     );
   }
 
   readOne(id: number): void {
     this.cs.getDataById(id).subscribe(
-      (response: Data) => this.member = response,
+      (response: Data) => this.buch = response,
       error => this.error = error,
     );
   }
 
   update(data: Data): void {
-    this.member = data;
-    this.cs.update(this.member.id, this.member);
+    this.buch = data;
+    this.cs.update(this.buch.id, this.buch);
     this.router.navigateByUrl('/read');
   }
 
@@ -86,7 +89,7 @@ export class ReadComponent implements OnInit {
       console.log(this.closeResult);
       if (result === 'delete')
       {
-        this.deleteOne(this.member?.id);
+        this.deleteOne(this.buch?.id);
       }
     });
   }

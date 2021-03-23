@@ -21,12 +21,15 @@ export class CreateComponent implements OnInit {
   ) {
     this.form = this.fb.group(
       {
-        firstNameControl: ['', Validators.required],
-        lastNameControl: ['', Validators.required],
-        emailControl: ['', Validators.required],
+        titelControl: ['', Validators.required],
+        autorControl: ['', Validators.required],
+        genreControl: ['', Validators.required],
+        statusControl: ['', Validators.required],
+        bewertungControl: ['', Validators.required],
+        notizControl: ['', Validators.required],
       }
     );
-    this.data = { id: 0, firstname: '', lastname: '', email: ''};
+    this.data = { id: 0, titel: '', autor: '', genre: '', status: '', bewertung: '', notiz: ''};
   }
 
   ngOnInit(): void {
@@ -35,9 +38,12 @@ export class CreateComponent implements OnInit {
   onSubmit(): void {
     console.warn(this.form.value);
     const values = this.form.value;
-    this.data.firstname = values.firstNameControl;
-    this.data.lastname = values.lastNameControl;
-    this.data.email = values.emailControl;
+    this.data.titel = values.titelControl;
+    this.data.autor = values.autorControl;
+    this.data.genre = values.genreControl;
+    this.data.status = values.statusControl;
+    this.data.bewertung = values.bewertungControl;
+    this.data.notiz = values.notizControl;
     console.log(this.data);
     this.cs.create(this.data);
     this.router.navigate(['/read']);
