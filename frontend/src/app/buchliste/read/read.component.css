@@ -1,0 +1,12 @@
+#hinzu {
+  float: right;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background-color: salmon;
+  color: black;
+}
+
+#hinzu:hover {
+  background-color: aqua;
+  color: white;
+}
