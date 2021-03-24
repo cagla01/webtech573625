@@ -7,7 +7,7 @@ import {Data} from "./data";
   providedIn: 'root'
 })
 export class BackendService {
-  baseUrl = 'http://localhost:3000/members';
+  baseUrl = 'http://localhost:3000/buchliste';
 
   constructor(private http: HttpClient) { }
 
