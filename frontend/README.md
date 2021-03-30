@@ -1,27 +1,50 @@
-# Frontend
+# Bücherliste
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Bei diesem Projekt können Bücher mit Angaben von Titel, Autor, Genre, Status, 
+Bewertung und Notizen zu einer Liste hinzugefügt werden.
+
+```
+create   Bucheintrag
+read     Bucheintrag
+update   Bucheintrag
+delete   Bucheintrag
+```
+
+
+## Frontend
+
+Das Frontend wurde mit [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4. entwickelt. 
+Als CSS-Framework wurde Bootstrap genutzt.
+ 
+## Backend
+
+Im Backend dieses Projektes wurde mit Node.js gearbeitet. 
+
+## Datenbank
+
+Als Datenbank für dieses Projekt wurde MySQL genutzt. 
+
+***
+
+## Installation 
+
+1. Repository clonen 
+```
+git clone https://github.com/cagla01/webtech573625.git
+```
+2. npm packages im frontend installieren 
+```
+npm install
+```
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Führen sie den Befehl `ng serve` aus. Öffnen sie den Browser und geben sie `http://localhost:4200/` als URL ein. 
+Der Browser reagiert automatisch auf Veränderungen.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+***
+- [GitHub](https://github.com/cagla01)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Projekt Link](https://github.com/cagla01/webtech573625.git)
