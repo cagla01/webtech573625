@@ -28,7 +28,6 @@ import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { allIcons } from 'ngx-bootstrap-icons';
 import { FormComponent } from './buchliste/read/form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { StarComponent } from './star/star.component';
 
 
 @NgModule({
@@ -41,8 +40,7 @@ import { StarComponent } from './star/star.component';
     ReadComponent,
     UpdateComponent,
     DeleteComponent,
-    FormComponent,
-    StarComponent
+    FormComponent
   ],
   imports: [
     BrowserModule,
