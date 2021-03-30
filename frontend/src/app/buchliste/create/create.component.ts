@@ -29,7 +29,7 @@ export class CreateComponent implements OnInit {
         notizControl: ['', Validators.required],
       }
     );
-    this.data = { id: 0, titel: '', autor: '', genre: '', status: '', bewertung: '', notiz: ''};
+    this.data = { id: 0, titel: '', autor: '', genre: '', status: '', bewertung: 0, notiz: ''};
   }
 
   ngOnInit(): void {

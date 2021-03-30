@@ -1,5 +1,6 @@
-<button id="hinzu" type="button" class="btn btn-secondary" routerLink="/create">Buch hinzufügen</button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div *ngIf="selectedId == 0" class="container">
+  <button id="hinzu" type="button" class="btn btn-secondary" routerLink="/create">Buch hinzufügen</button>
   <table class="table table-striped table-hover">
       <caption>List of Books</caption>
       <thead>
@@ -20,7 +21,13 @@
         <td>{{buch.autor}}</td>
         <td>{{buch.genre}}</td>
         <td>{{buch.status}}</td>
-        <td>{{buch.bewertung}}</td>
+        <td>
+          <span *ngIf="buch.bewertung >= 1" class="fa fa-star checked"></span>
+          <span *ngIf="buch.bewertung >= 2" class="fa fa-star checked"></span>
+          <span *ngIf="buch.bewertung >= 3" class="fa fa-star checked"></span>
+          <span *ngIf="buch.bewertung >= 4" class="fa fa-star checked"></span>
+          <span *ngIf="buch.bewertung >= 5" class="fa fa-star checked"></span>
+        </td>
         <td>{{buch.notiz}}</td>
         <td><a [routerLink]="['/read/', buch.id]">
           <i-bs

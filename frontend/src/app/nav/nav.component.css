@@ -1,25 +1,25 @@
 .sidenav-container {
   height: 100%;
-  background: #ffc0cb;
+  background: #E1C4AE;
   color: white;
 }
 
 .sidenav {
   width: 200px;
-  background: #fa8072;
+  background: #bd9a73;
   color: white;
 }
 
 .sidenav .mat-toolbar {
   /* background: inherit; */
-  background: #fa8072;
+  background: #bd9a73;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #ffc0cb;
+  background: #E1C4AE;
 }
 
 .mat-toolbar h1 {
@@ -42,3 +42,21 @@
   color: white;
 }
 
+ul {
+  padding: 50px;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+ul li {
+  list-style: none;
+  float: left;
+  font-size: 40px;
+  transition: 0.8s;
+}
+
+li:hover {
+  transform: rotateZ(30deg);
+
+}

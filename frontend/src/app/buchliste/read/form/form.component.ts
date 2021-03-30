@@ -54,5 +54,5 @@ export class FormComponent implements OnInit {
   cancel(): void {
     this.location.back();
   }
-
 }
+

@@ -4,6 +4,6 @@ export interface Data {
   autor: string;
   genre: string;
   status: string;
-  bewertung: string;
+  bewertung: number;
   notiz: string;
 }
