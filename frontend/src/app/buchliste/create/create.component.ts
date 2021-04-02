@@ -25,8 +25,8 @@ export class CreateComponent implements OnInit {
         autorControl: ['', Validators.required],
         genreControl: ['', Validators.required],
         statusControl: ['', Validators.required],
-        bewertungControl: ['', Validators.required],
-        notizControl: ['', Validators.required],
+        bewertungControl: ['', !Validators],
+        notizControl: ['', !Validators],
       }
     );
     this.data = { id: 0, titel: '', autor: '', genre: '', status: '', bewertung: 0, notiz: ''};
