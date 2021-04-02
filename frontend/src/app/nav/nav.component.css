@@ -1,25 +1,26 @@
 .sidenav-container {
   height: 100%;
-  background: #E1C4AE;
-  color: white;
+  background: #F6F6F6;
+  color: #3C79B4;
 }
 
 .sidenav {
   width: 200px;
-  background: #bd9a73;
-  color: white;
+  background: #C9ECF5;
+  color: #3C79B4;
 }
 
 .sidenav .mat-toolbar {
   /* background: inherit; */
-  background: #bd9a73;
+  background: #C9ECF5;
+  color : #3C79B4;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #E1C4AE;
+  background: #F6F6F6;
 }
 
 .mat-toolbar h1 {
@@ -33,13 +34,14 @@
   padding-bottom: 2%;
 }
 
+/* Überschrift */
 .mat-toolbar {
   color: white;
   padding-top: 5%;
 }
 
 .mat-list-item {
-  color: white;
+  color: #3C79B4;
 }
 
 ul {
@@ -52,11 +54,14 @@ ul {
 ul li {
   list-style: none;
   float: left;
-  font-size: 40px;
+  font-size: 50px;
   transition: 0.8s;
+  text-shadow: 2px 2px gray;
 }
 
+
 li:hover {
-  transform: rotateZ(30deg);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
 }

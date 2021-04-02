@@ -1,7 +1,15 @@
 div.container {
-  background-color: gray;
+  background-color: #3C79B4;
   color: white;
   border-radius: 15px;
   padding: 3%;
+  margin-top: 10px;
 }
 
+#cancel{
+  background-color: #B7986C;
+}
+
+#create {
+  background-color: #C9ECF5;
+}
