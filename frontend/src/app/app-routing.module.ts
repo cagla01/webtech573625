@@ -8,7 +8,7 @@ import {DeleteComponent} from "./buchliste/delete/delete.component";
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'update', component: UpdateComponent },
-  { path: 'update/:id', component: UpdateComponent },
+  { path: 'update/:id', component: ReadComponent },
   { path: 'read', component: ReadComponent },
   { path: 'read/:id', component: ReadComponent },
   { path: 'delete', component: DeleteComponent },
