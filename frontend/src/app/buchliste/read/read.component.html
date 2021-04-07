@@ -66,53 +66,53 @@
 <!-- modaler Dialog fuer das Loeschen -->
 
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Löschen bestätigen</h4>
+  <div class="modal-header" style="background-color: #3C79B4">
+    <h4 class="modal-title" id="modal-basic-title" style="background-color: #3C79B4; color: #F6F6F6">Löschen bestätigen</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('cancel')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <h4 style="color: red">Möchten Sie den Eintrag wirklich löschen?</h4>
+    <h4 style="color: red">Möchten Sie diesen Eintrag wirklich löschen?</h4>
     <form [formGroup]="form">
       <div class="form-group">
-        <label for="inpId">id</label>
+        <label for="inpId">Id</label>
         <div class="input-group">
           <input id="inpId" class="form-control" formControlName="idControl" value="{{ buch?.id }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpT">titel</label>
+        <label for="inpT">Titel</label>
         <div class="input-group">
           <input id="inpT" class="form-control" formControlName="titelControl" value="{{ buch?.titel }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpA">autor</label>
+        <label for="inpA">Autor</label>
         <div class="input-group">
           <input id="inpA" class="form-control" formControlName="autorControl" value="{{ buch?.autor }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpG">genre</label>
+        <label for="inpG">Genre</label>
         <div class="input-group">
           <input id="inpG" class="form-control" formControlName="genreControl" value="{{ buch?.genre }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpS">status</label>
+        <label for="inpS">Status</label>
         <div class="input-group">
           <input id="inpS" class="form-control" formControlName="statusControl" value="{{ buch?.status }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpB">bewertung</label>
+        <label for="inpB">Bewertung</label>
         <div class="input-group">
           <input id="inpB" class="form-control" formControlName="bewertungControl" value="{{ buch?.bewertung }}" readonly>
         </div>
       </div>
       <div class="form-group">
-        <label for="inpN">notiz</label>
+        <label for="inpN">Notiz</label>
         <div class="input-group">
           <input id="inpN" class="form-control" formControlName="notizControl" value="{{ buch?.notiz }}" readonly>
         </div>
@@ -120,7 +120,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="modal.close('cancel')">Cancel</button>
-    <button type="button" class="btn btn-primary" (click)="modal.close('delete')">Delete</button>
+    <button type="button" class="btn btn-danger" (click)="modal.close('delete')">Delete</button>
+    <button type="button" class="btn btn-dark" (click)="modal.close('cancel')">Cancel</button>
   </div>
 </ng-template>

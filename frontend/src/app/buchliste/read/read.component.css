@@ -19,6 +19,11 @@ th{
   text-shadow: 0.5px 0.5px gray;
 }
 
+form{
+  color: #3C79B4;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 770px){
   button{
     margin-left: 20px;
