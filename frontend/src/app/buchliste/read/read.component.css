@@ -14,3 +14,13 @@
   color: orange;
 }
 
+th{
+  color: #3C79B4;
+  text-shadow: 0.5px 0.5px gray;
+}
+
+@media screen and (max-width: 770px){
+  button{
+    margin-left: 20px;
+  }
+}

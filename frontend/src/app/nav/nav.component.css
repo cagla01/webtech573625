@@ -5,7 +5,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 175px;
   background: #C9ECF5;
   color: #3C79B4;
 }
@@ -46,10 +46,10 @@
 
 ul {
   padding: 50px;
-  margin: 0;
   position: absolute;
   top: 20%;
   left: 25%;
+  margin-bottom: 10px;
 }
 ul li {
   list-style: none;
@@ -59,9 +59,24 @@ ul li {
   text-shadow: 2px 2px gray;
 }
 
-
 li:hover {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
+}
+
+@media screen and (max-width: 950px){
+  ul{
+    left: 5%;
+  }
+
+}
+
+@media screen and (max-width: 770px){
+  ul li{
+    font-size: 40px;
+  }
+  ul{
+    padding-right: 5px;
+  }
 }

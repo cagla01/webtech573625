@@ -6,7 +6,8 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]="['/create']">Create</a>
-      <a mat-list-item [routerLink]="['/read']">Read</a>
+      <a mat-list-item [routerLink]="['/read']">List</a>
+      <a mat-list-item [routerLink]="['/update']">Done</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -19,14 +20,13 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-
       <h1 class="title">
         <ul>
           <li style="color: #3C79B4">M</li>
           <li style="color: #B7986C">e</li>
           <li style="color: #C9ECF5">i</li>
           <li style="color: #3C79B4">n</li>
-          <li style="color: #B7986C; padding-right: 10px">e</li>
+          <li id="e" style="color: #B7986C; padding-right: 10px">e</li>
           <li style="color: #C9ECF5">B</li>
           <li style="color: #3C79B4">ü</li>
           <li style="color: #B7986C">c</li>
@@ -40,6 +40,7 @@
           <li style="color: #3C79B4">e</li>
         </ul>
       </h1>
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

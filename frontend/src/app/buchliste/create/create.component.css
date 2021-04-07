@@ -3,7 +3,7 @@ div.container {
   color: white;
   border-radius: 15px;
   padding: 3%;
-  margin-top: 10px;
+  margin: 2%;
 }
 
 #cancel{
@@ -12,4 +12,8 @@ div.container {
 
 #create {
   background-color: #C9ECF5;
+}
+
+button {
+  margin-top: 5px;
 }
