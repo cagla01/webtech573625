@@ -26,6 +26,7 @@ import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 import { allIcons } from 'ngx-bootstrap-icons';
 import { FormComponent } from './buchliste/read/form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DoneComponent } from './buchliste/done/done.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReadComponent,
     UpdateComponent,
     DeleteComponent,
-    FormComponent
+    FormComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,
